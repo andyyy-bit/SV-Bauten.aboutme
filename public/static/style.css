@@ -1,0 +1,863 @@
+/* ══════════════════════════════════════════════════
+   DESIGN SYSTEM – Andreas Bauten Sachverständiger
+   ══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #0F2B46;
+  --secondary: #1A73B5;
+  --accent: #D4A03C;
+  --bg-light: #F7F8FA;
+  --bg-white: #FFFFFF;
+  --text-dark: #1A1A2E;
+  --text-mid: #4A5568;
+  --border: #E2E8F0;
+  --hero-right: #1A3A5C;
+  --text-light: #CBD5E0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(24px, 4vw, 30px);
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
+  color: var(--secondary);
+  line-height: 1.4;
+}
+
+p {
+  color: var(--text-dark);
+}
+
+/* ══════════════════════════════════════════════════
+   SEKTION 1 – HERO
+   ══════════════════════════════════════════════════ */
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--hero-right) 100%);
+  padding: 80px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(26, 115, 181, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212, 160, 60, 0.15);
+  border: 1px solid rgba(212, 160, 60, 0.3);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: var(--text-light);
+  max-width: 520px;
+  line-height: 1.75;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  transform: rotate(3deg);
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.35));
+  transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* ══════════════════════════════════════════════════
+   SEKTION 2 – WARUM DIESER SACHVERSTAENDIGE
+   ══════════════════════════════════════════════════ */
+
+.why-section {
+  background: var(--bg-white);
+  padding: 90px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-header h2 {
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-mid);
+  font-size: 16px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(26, 115, 181, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--secondary);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════════
+   SEKTION 3 – BERUFLICHE MEILENSTEINE (TIMELINE)
+   ══════════════════════════════════════════════════ */
+
+.timeline-section {
+  background: var(--bg-light);
+  padding: 90px 0;
+}
+
+.timeline-section .section-header {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--secondary);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--secondary);
+  border-radius: 50%;
+  border: 3px solid var(--bg-light);
+  box-shadow: 0 0 0 2px var(--secondary);
+  z-index: 1;
+}
+
+.timeline-date {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.timeline-item h3 {
+  color: var(--primary);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.timeline-subtitle {
+  font-size: 15px;
+  color: var(--text-mid);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.timeline-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-item ul li {
+  font-size: 15px;
+  color: var(--text-mid);
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.timeline-item ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+.timeline-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ══════════════════════════════════════════════════
+   SEKTION 4 – BMW PROJEKT
+   ══════════════════════════════════════════════════ */
+
+.bmw-section {
+  background: var(--primary);
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bmw-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(26, 115, 181, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.bmw-badge {
+  display: inline-block;
+  background: rgba(212, 160, 60, 0.15);
+  border: 1px solid rgba(212, 160, 60, 0.3);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.bmw-section h2 {
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.bmw-subtitle {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.bmw-intro {
+  font-size: 16px;
+  color: var(--text-light);
+  max-width: 700px;
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+.bmw-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.bmw-details h3 {
+  color: var(--accent);
+  font-size: 20px;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.bmw-details h3:first-child {
+  margin-top: 0;
+}
+
+.bmw-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bmw-details ul li {
+  font-size: 15px;
+  color: var(--text-light);
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.bmw-details ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* BMW Image Gallery */
+.bmw-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.gallery-placeholder {
+  background: rgba(226, 232, 240, 0.1);
+  border: 1px dashed rgba(226, 232, 240, 0.3);
+  border-radius: 12px;
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background 0.3s ease;
+}
+
+.gallery-placeholder:hover {
+  background: rgba(226, 232, 240, 0.15);
+}
+
+.gallery-placeholder svg {
+  width: 32px;
+  height: 32px;
+  color: rgba(226, 232, 240, 0.4);
+}
+
+.gallery-placeholder span {
+  font-size: 13px;
+  color: rgba(226, 232, 240, 0.5);
+  text-align: center;
+  padding: 0 12px;
+}
+
+.bmw-badges {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.bmw-chip {
+  background: rgba(26, 115, 181, 0.25);
+  border: 1px solid rgba(26, 115, 181, 0.4);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 24px;
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════════════════
+   SEKTION 5 – ZERTIFIZIERUNGEN
+   ══════════════════════════════════════════════════ */
+
+.certs-section {
+  background: var(--bg-white);
+  padding: 90px 0;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.cert-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.cert-logo {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cert-logo img {
+  max-height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.cert-card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.certs-footer {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+.certs-footer p {
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+/* ══════════════════════════════════════════════════
+   SEKTION 6 – TECHNISCHE KOMPETENZEN
+   ══════════════════════════════════════════════════ */
+
+.skills-section {
+  background: var(--bg-light);
+  padding: 90px 0;
+}
+
+.skills-section .section-header {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.skill-group {
+  margin-bottom: 32px;
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-group h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(26, 115, 181, 0.15);
+}
+
+.skill-group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-group ul li {
+  font-size: 15px;
+  color: var(--text-mid);
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.skill-group ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+/* ══════════════════════════════════════════════════
+   SEKTION 7 – STANDORT & CTA
+   ══════════════════════════════════════════════════ */
+
+.cta-section {
+  background: var(--bg-white);
+  padding: 90px 0 80px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  margin-bottom: 16px;
+}
+
+.cta-section > .container > p {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  color: var(--text-mid);
+  font-size: 16px;
+}
+
+.location-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.location-tag {
+  background: var(--border);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 18px;
+  border-radius: 50px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--secondary);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 16px 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-bottom: 40px;
+}
+
+.cta-button:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+.cta-stamp {
+  display: flex;
+  justify-content: center;
+}
+
+.cta-stamp img {
+  width: 110px;
+  height: auto;
+  opacity: 0.7;
+  filter: grayscale(20%);
+  transition: opacity 0.3s ease;
+}
+
+.cta-stamp img:hover {
+  opacity: 0.9;
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE – TABLET
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2;
+  }
+
+  .hero-text p {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    order: 1;
+  }
+
+  .hero-image img {
+    width: 240px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .certs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bmw-content {
+    grid-template-columns: 1fr;
+  }
+
+  .bmw-gallery {
+    grid-template-columns: 1fr 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE – MOBILE
+   ══════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 50px 0 60px;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .hero-image img {
+    width: 200px;
+  }
+
+  .why-section,
+  .timeline-section,
+  .bmw-section,
+  .certs-section,
+  .skills-section,
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bmw-gallery {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  /* Mobile horizontal slider for BMW gallery */
+  .bmw-gallery-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .bmw-gallery-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bmw-gallery-wrapper .bmw-gallery {
+    display: flex;
+    gap: 16px;
+    max-width: none;
+  }
+
+  .bmw-gallery-wrapper .gallery-placeholder {
+    min-width: 260px;
+    scroll-snap-align: start;
+    aspect-ratio: 4/3;
+  }
+
+  .timeline {
+    padding-left: 32px;
+  }
+
+  .timeline-card {
+    padding: 20px;
+  }
+
+  .bmw-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location-tags {
+    gap: 8px;
+  }
+
+  .location-tag {
+    font-size: 13px;
+    padding: 5px 14px;
+  }
+
+  .cta-button {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   ANIMATIONEN
+   ══════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
